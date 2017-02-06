@@ -16,15 +16,16 @@
 
 	<!-- Nuestra aplicación AngularJS -->
 	<script src="app/app.js"></script>
+	<script src="app/dataController.js"></script>
 </head>
 <body>
 	<div class="container" ng-controller="dataController">
 		<h1>Hola Mundo</h1>
 		<label for="nombre">Nombre:</label>
-		<input type="text" id="nombre" ng-model={{nombre}}/>
+		<input type="text" id="nombre" ng-model="nombre"/>
 		<label for="apellido">Apellido:</label>
-		<input type="text" id="apellido" ng-model={{apellido}}/>
-		<select ng-model={{genero}} ng-show="camposRellenos">
+		<input type="text" id="apellido" ng-model="apellido"/>
+		<select ng-model="genero" ng-show="camposRellenos">
 			<option value="0">Hombre</option>
 			<option value="1">Mujer</option>
 		</select>

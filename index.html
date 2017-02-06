@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div class="container" ng-controller="dataController">
-		<h1>Hola Mundo</h1>
+		<h1>Hola {{ nombre + " " + apellido}}</h1>
 		<label for="nombre">Nombre:</label>
 		<input type="text" id="nombre" ng-model="nombre"/>
 		<label for="apellido">Apellido:</label>

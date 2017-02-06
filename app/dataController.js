@@ -2,4 +2,5 @@ angular.module("nuestroRSS").controller("dataController", ['$scope', function($s
 	$scope.camposRellenos = false;
 	$scope.nombre = "";
 	$scope.apellido = "";
+
 }]);

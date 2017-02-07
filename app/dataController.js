@@ -1,4 +1,4 @@
-angular.module("nuestroRSS").controller("dataController", ['$scope', function($scope) {
+angular.module("nuestroRSS").controller("dataController", ['$scope', 'ApiService', function($scope, ApiService) {
 	$scope.camposRellenos = false;
 	$scope.nombre = "";
 	$scope.apellido = "";
@@ -17,10 +17,12 @@ angular.module("nuestroRSS").controller("dataController", ['$scope', function($s
 
 	$scope.pedirDatos = function() {
 		if($scope.compruebaCamposRellenos($scope.nombre, $scope.apellido)) {
-			if($scope.genero == "0")
-				console.log("Pedir datos para usuario con id 1");
-			else
-				console.log("Pedir datos para usuario con id 2");
+			ApiService.getDatos($scope.genero).then(
+				function(data){
+					console.log(data);
+				}, function(error){
+					console.log(error);
+			});
 		} else {
 			console.log("Error, algo salió mal!");
 		}

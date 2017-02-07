@@ -17,6 +17,7 @@
 	<!-- Nuestra aplicación AngularJS -->
 	<script src="app/app.js"></script>
 	<script src="app/dataController.js"></script>
+	<script src="app/generoController.js"></script>
 </head>
 <body>
 	<div class="container" ng-controller="dataController">
@@ -25,10 +26,11 @@
 		<input type="text" id="nombre" ng-model="nombre"/>
 		<label for="apellido">Apellido:</label>
 		<input type="text" id="apellido" ng-model="apellido"/>
-		<select ng-model="genero" ng-show="camposRellenos">
-			<option value="0">Hombre</option>
+		<select ng-model="genero" ng-show="compruebaCamposRellenos(nombre, apellido)" ng-controller="generoController" ng-change="enviaGenero()">
+			<option value="0" selected>Hombre</option>
 			<option value="1">Mujer</option>
 		</select>
+		<button ng-show="compruebaCamposRellenos(nombre, apellido)" ng-click="pedirDatos()">Pedir datos</button>
 	</div>
 </body>
 </html>

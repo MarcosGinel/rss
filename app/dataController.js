@@ -20,6 +20,7 @@ angular.module("nuestroRSS").controller("dataController", ['$scope', 'ApiService
 			ApiService.getDatos($scope.genero).then(
 				function(data){
 					console.log(data);
+					$scope.$broadcast("datosPreparados", data.data);
 				}, function(error){
 					console.log(error);
 			});

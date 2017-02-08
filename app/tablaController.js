@@ -2,5 +2,4 @@ angular.module("nuestroRSS").controller("tablaController", ['$scope', function($
 	$scope.$on("datosPreparados", function(event, data) {
 		$scope.misPosts = data;
 	});
-	
 }]);
